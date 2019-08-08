@@ -41,9 +41,9 @@ get_header(); ?>
 
 		if( $blogs->have_posts() ) :
 			while( $blogs->have_posts() ) : $blogs->the_post();
-				get_template_part( 'template-parts/preview/content', get_post_type() );
+				get_template_part( 'template-parts/preview/content', get_post_type() ); // Получения части шаблона. get_post_type - получает тип поста который находится сейчас у выводимой в цилке записи
 			endwhile;
-			the_posts_pagination();
+			the_posts_pagination(); // Постраничная навигация
 			wp_rest_postdata();
 		endif;
 	?>
